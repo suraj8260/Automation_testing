@@ -19,28 +19,28 @@ public class HandlingMSB_and_DropDown {
 
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         
-//      driver.findElement(By.id("drop1")).sendKeys("doc 3");	// This can be used but this is not the right way to use to MSB / dropdown
+//        driver.findElement(By.id("drop1")).sendKeys("doc 3");	// This can be used but this is not the right way to use to MSB / dropdown
 
         // Dropdown
         
-//        WebElement dropdownelements =  driver.findElement(By.id("drop1"));
- 
-//        Select sel = new Select(dropdownelements);
-        
-//      sel.selectByVisibleText("doc 3");
-//      sel.selectByIndex(2);
+        WebElement dropdownelements =  driver.findElement(By.id("drop1"));
+        Thread.sleep(5000);
+        Select sel = new Select(dropdownelements);
+        Thread.sleep(5000);
+      sel.selectByVisibleText("doc 3");
+      sel.selectByIndex(2);
         
         // Multi selection Box
         
-        WebElement msb =  driver.findElement(By.id("multiselect1"));
-        
-        Select sel = new Select(msb);
-        sel.selectByVisibleText("Volvo");
-        sel.selectByVisibleText("Swift");
-        sel.selectByVisibleText("Audi");
-        
-        Thread.sleep(3000);
-        sel.deselectByVisibleText("Swift");
+//        WebElement msb =  driver.findElement(By.id("multiselect1"));
+//        
+//        Select sel = new Select(msb);
+//        sel.selectByVisibleText("Volvo");
+//        sel.selectByVisibleText("Swift");
+//        sel.selectByVisibleText("Audi");
+//        
+//        Thread.sleep(3000);
+//        sel.deselectByVisibleText("Swift");
         
 	}
 
