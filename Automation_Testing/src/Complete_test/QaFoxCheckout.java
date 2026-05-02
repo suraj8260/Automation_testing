@@ -68,15 +68,22 @@ public class QaFoxCheckout {
             WebElement showCart = driver.findElement(By.xpath("//strong[normalize-space()='View Cart']"));
             showCart.click();
             Thread.sleep(3000);
-            WebElement updateProduct = driver.findElement(By.cssSelector("input[value='2'][name='quantity[351585]']"));
-            updateProduct.clear();
+            WebElement updateProduct = driver.findElement(By.xpath("//input[@name='quantity[353634]']"));
             Thread.sleep(3000);
+            updateProduct.clear();
             updateProduct.sendKeys("5");
+            Thread.sleep(5000);            
+            WebElement update1 = driver.findElement(By.xpath("//input[@name='quantity[353634]']/ancestor::tr//button[@data-original-title='Update']"));
+            update1.click();
+            WebElement updateProduct2 = driver.findElement(By.xpath("//input[@name='quantity[353645]']"));
+            Thread.sleep(3000);
+            updateProduct2.clear();
+            updateProduct2.sendKeys("5");
+            Thread.sleep(5000);            
+            WebElement update2 = driver.findElement(By.xpath("//input[@name='quantity[353645]']/ancestor::tr//button[@data-original-title='Update']"));
+            update2.click();
             Thread.sleep(5000);
-            WebElement update = driver.findElement(By.xpath("//i[@class='fa fa-refresh']"));
-            update.click();
-            Thread.sleep(5000);
-            WebElement checkout = driver.findElement(By.xpath("//a[@class='btn btn-primary']"));
+            WebElement checkout = driver.findElement(By.linkText("Checkout"));
             checkout.click();
             Thread.sleep(5000);
         } catch (Exception e) {

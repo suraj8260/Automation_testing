@@ -19,19 +19,18 @@ public class FacebookLoginTest {
 
             // 4. Locate the email and password fields
             WebElement emailField = driver.findElement(By.xpath("//input[@id='_R_64mkqsr9pb6amH1_']"));
-            WebElement passwordField = driver.findElement(By.xpath("//input[@id='_R_66mkqsr9pb6amH1_']"));
-            
-            // 5. Enter credentials
             emailField.sendKeys("email@example.com");
+            Thread.sleep(2000);
+            WebElement passwordField = driver.findElement(By.xpath("//input[@id='_R_66mkqsr9pb6amH1_']"));
             passwordField.sendKeys("password_123");
-            Thread.sleep(5000);
+            Thread.sleep(2000);
             // 6. Locate and click the Login button
             // Using name="login" as it is standard for the FB login button
             WebElement loginButton = driver.findElement(By.xpath("//span[@class='x1lliihq x193iq5w x6ikm8r x10wlt62 xlyipyv xuxw1ft'][normalize-space()='Log in']"));
             loginButton.click();
 
             // 7. Wait briefly to observe result (Not recommended for production)
-            Thread.sleep(5000);
+            Thread.sleep(000);
             
             WebElement forgotPassword = driver.findElement(By.xpath("//span[contains(text(),'Forgotten password?')]"));
             forgotPassword.click();
