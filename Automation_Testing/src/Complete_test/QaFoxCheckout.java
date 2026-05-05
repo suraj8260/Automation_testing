@@ -1,6 +1,7 @@
 package Complete_test;
 import java.time.Duration;
 
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -42,6 +43,26 @@ public class QaFoxCheckout {
             WebElement loginButton = driver.findElement(By.xpath("//input[@value='Login']"));
             loginButton.click();
 
+            try {
+                // Wait up to 5 seconds for the alert to appear
+                WebDriverWait alertWait = new WebDriverWait(driver, Duration.ofSeconds(5));
+                alertWait.until(ExpectedConditions.alertIsPresent());
+
+                // Switch to the alert
+                Alert alert = driver.switchTo().alert();
+
+                // Capture the text (Optional: useful for logging)
+                System.out.println("Alert detected: " + alert.getText());
+
+                // Accept the alert (Clicks 'OK')
+                alert.accept();
+                
+                System.out.println("Alert handled successfully.");
+            } catch (Exception e) {
+                // If no alert appears within 5 seconds, it will catch the timeout and continue
+                System.out.println("No password breach alert appeared; proceeding with flow.");
+            }
+            
             Thread.sleep(5000);
             
             WebElement tab = driver.findElement(By.xpath("//a[normalize-space()='Tablets']"));

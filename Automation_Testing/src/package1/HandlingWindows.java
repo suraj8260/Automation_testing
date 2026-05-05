@@ -28,7 +28,7 @@ public class HandlingWindows {
         driver.switchTo().window(childWindow);
 
         String textInOtherWindow = driver
-                .findElement(By.xpath("//h1[normalize-space()='Not found']"))
+                .findElement(By.tagName("body"))
                 .getText();
 
         System.out.println(textInOtherWindow);
