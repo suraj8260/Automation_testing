@@ -9,6 +9,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.WebDriverWait;
 public class HandlingLightBox {
 	public static void main(String[] args) throws InterruptedException {
 		WebDriver driver = new ChromeDriver();
@@ -17,11 +18,11 @@ public class HandlingLightBox {
 		driver.manage().window().maximize();
 		driver.findElement(By.xpath("//div[@class='ADXRXN MQHiAK']//button[@type='button']")).click();	
 
-		Thread.sleep(3000);
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 		driver.findElement(By.xpath("//div[@class='VHreRh cLlqFI XjRT60']//*[name()='svg']")).click();
-		Thread.sleep(3000);
+		WebDriverWait wait1 = new WebDriverWait(driver, Duration.ofSeconds(10));
 		driver.findElement(By.xpath("//div[contains(text(),'Explore')]")).click();
-		Thread.sleep(3000);
+		WebDriverWait wait2 = new WebDriverWait(driver, Duration.ofSeconds(10));
 		driver.quit();
 		}
 	}
