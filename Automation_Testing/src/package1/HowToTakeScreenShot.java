@@ -23,11 +23,11 @@ public class HowToTakeScreenShot {
         
         File sourcefile = take_st.getScreenshotAs(OutputType.FILE); //---> taken the screenshot
         
-        File locationfile = new File("C:/Users/Suraj kumar meher/OneDrive/Pictures/Screenshots/sss.png");
+        File locationfile = new File("C:/Users/Suraj kumar meher/OneDrive/Pictures/Screenshots/ABC.png");
         
         sourcefile.renameTo(locationfile);
         
-        driver.quit();
+//        driver.quit();
         
     }
 
